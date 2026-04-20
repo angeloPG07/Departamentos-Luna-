@@ -145,9 +145,42 @@ body {
 }
 
 .author-photo {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 5px solid var(--white);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.profile-card {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: var(--transition-smooth);
+}
+
+.info-item {
+    padding: 1.5rem;
+    border-radius: 1.2rem;
+    background: var(--soft-gray);
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: var(--transition-smooth);
+    height: 100%;
+    overflow-wrap: break-word;
+}
+
+.info-item a {
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+.info-item:hover {
+    background: var(--white);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transform: translateY(-5px);
 }
 
 .grid {
