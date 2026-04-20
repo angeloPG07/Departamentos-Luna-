@@ -254,6 +254,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             alert("¡Registro exitoso!\nGracias por tu interés, " + nombre + ".");
+
+            const destinatario = "apartamentosluna36@gmail.com";
+            const asunto = encodeURIComponent("Nuevo Registro de Interés: " + nombre);
+            const cuerpo = encodeURIComponent(
+                "Hola, se ha recibido un nuevo registro de interés:\n\n" +
+                "Nombre: " + nombre + "\n" +
+                "Email de contacto: " + email + "\n" +
+                "Edad: " + edad + " años\n" +
+                "Mensaje: " + comentario
+            );
+
+            window.location.href = `mailto:${destinatario}?subject=${asunto}&body=${cuerpo}`;
+
             this.reset();
             
             const rangeLabel = document.getElementById('rangeValue');
