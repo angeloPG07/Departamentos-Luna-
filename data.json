@@ -1,0 +1,76 @@
+{
+  "carrusel": [
+    {
+      "id": 0,
+      "imagen": "images/Carusel1.jpg",
+      "titulo": "Tu Nuevo Hogar.",
+      "subtitulo": "Espacios diseñados para vivir con comodidad y estilo."
+    },
+    {
+      "id": 1,
+      "imagen": "images/Carusel2.jpg",
+      "titulo": "Ubicación que Conecta.",
+      "subtitulo": "Cerca de todo lo que necesitas, en un entorno tranquilo."
+    },
+    {
+      "id": 2,
+      "imagen": "images/Carusel3.jpg",
+      "titulo": "Vida en Armonía.",
+      "subtitulo": "Naturaleza, diseño y bienestar en un solo lugar."
+    }
+  ],
+  "apartamentos": [
+    {
+      "id": 1,
+      "nombre": "Luna Standard",
+      "precio": "$1,200",
+      "ubicacion": "Colección Base",
+      "imagen": "images/luna_standard.jpg",
+      "descripcion": "Espacio cómodo y funcional, ideal para una vida práctica y equilibrada. Incluye 1 habitación, 1 baño y cocina equipada."
+    },
+    {
+      "id": 2,
+      "nombre": "Luna Garden",
+      "precio": "$1,500",
+      "ubicacion": "Mayor Confort",
+      "imagen": "images/luna_garden.jpg",
+      "descripcion": "Más amplitud y una cocina más espaciosa para una experiencia más cómoda. Incluye más espacio y cocina ampliada."
+    },
+    {
+      "id": 3,
+      "nombre": "Luna Deluxe",
+      "precio": "$2,000",
+      "ubicacion": "Nivel Superior",
+      "imagen": "images/luna_deluxe.jpg",
+      "descripcion": "Diseñado para quienes buscan mayor espacio y comodidad superior. Incluye 2 habitaciones y mayor amplitud."
+    }
+  ],
+  "servicios": [
+    {
+      "nombre": "Seguridad 24/7",
+      "icono": "bi-shield-check"
+    },
+    {
+      "nombre": "Internet",
+      "icono": "bi-wifi"
+    },
+    {
+      "nombre": "Áreas de recreación",
+      "icono": "bi-tree"
+    }
+  ],
+  "galeria": [
+    "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=400",
+    "https://images.unsplash.com/photo-1499955085172-a104c9463ece?auto=format&fit=crop&q=80&w=400",
+    "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=400",
+    "https://images.unsplash.com/photo-1527359395202-74742551c5de?auto=format&fit=crop&q=80&w=400",
+    "https://images.unsplash.com/photo-1556912177-c54030639a60?auto=format&fit=crop&q=80&w=400",
+    "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&q=80&w=400"
+  ],
+  "frases": [
+    {
+      "q": "Tu nuevo hogar te está esperando.",
+      "a": "Agenda tu visita y descubre el espacio ideal para ti."
+    }
+  ]
+}
