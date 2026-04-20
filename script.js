@@ -1,11 +1,8 @@
-// Esperamos a que el HTML cargue (JavaScript Puro)
 document.addEventListener('DOMContentLoaded', function () {
-    // Selección de elementos del DOM
     const grid = document.getElementById('apartment-grid');
     const gallery = document.getElementById('gallery-container');
     const servicesGrid = document.getElementById('services-grid');
 
-    // 0. EFECTO DE REVELACIÓN AL HACER SCROLL (JavaScript Puro)
     function reveal() {
         const reveals = document.querySelectorAll('.reveal');
         reveals.forEach(function (el) {
@@ -18,9 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
     window.addEventListener('scroll', reveal);
-    reveal(); // Disparo inicial
+    reveal();
 
-    // 1. NAVEGACIÓN SUAVE (JavaScript Puro)
     document.querySelectorAll('.nav-link').forEach(function (link) {
         link.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
@@ -35,11 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // 2. CARGA DE DATOS JSON (jQuery - Usado una sola vez)
     function cargarDatos() {
         $.getJSON('data.json', function (data) {
             if (grid) {
-                // Guardamos los apartamentos globalmente para poder re-renderizar al cambiar moneda sin re-leer el JSON
                 window.cachedApartments = data.apartamentos;
                 renderApartments(data.apartamentos);
             }
@@ -50,14 +44,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // --- GESTIÓN DE DIVISAS Y CONVERSIÓN ---
-
     window.obtenerTasaCambio = function(accion, codigoIso) {
         const apiKey = 'c3194feab7msh05f995639cf09ffp1acc42jsn3f39f00bf5ba';
         const apiHost = 'currency-conversion-and-exchange-rates.p.rapidapi.com';
 
         if (accion == 1) {
-            // Cargar símbolos iniciales
             $.ajax({
                 url: `https://${apiHost}/symbols`,
                 type: "GET",
@@ -75,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                     selectElement.innerHTML = opciones;
                     
-                    // Inicialización por defecto
                     if (!sessionStorage.getItem('divisa_preferida')) {
                         window.obtenerTasaCambio(2, 'USD');
                     }
@@ -104,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return sessionStorage.getItem('divisa_preferida');
     }
 
-    // Inicializar tipos de cambio si estamos en la página de apartamentos
     if (document.getElementById('selector-moneda')) {
         window.obtenerTasaCambio(1, "");
     }
@@ -124,7 +113,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const simbolo = getSimbolo(divisaActual);
 
         apartments.forEach(function (apto) {
-            // Limpiamos el precio del JSON (ej: "$1,200" -> 1200)
             const precioBase = parseFloat(apto.precio.replace(/[^0-9.-]+/g, ""));
             const precioFinal = (precioBase * factor).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
@@ -145,8 +133,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     cargarDatos();
 
-    // --- FUNCIONES DE DIBUJO (Rendering con JS Puro) ---
-
     function renderCarousel(slides) {
         const indicators = document.getElementById('carousel-indicators');
         const inner = document.getElementById('carousel-inner-container');
@@ -158,13 +144,10 @@ document.addEventListener('DOMContentLoaded', function () {
         slides.forEach(function (slide, index) {
             const activeClass = index === 0 ? 'active' : '';
             
-            // Crear Indicador
             indicators.innerHTML += '<button type="button" data-bs-target="#home" data-bs-slide-to="' + index + '" class="' + activeClass + '"></button>';
 
-            // Crear Slide
             const item = document.createElement('div');
             item.className = 'carousel-item ' + activeClass;
-            // Aplicamos la imagen con comillas dobles para mayor seguridad en la ruta
             item.style.backgroundImage = 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("' + slide.imagen + '")';
             item.innerHTML = '<div class="carousel-caption">' +
                 '<h1 class="display-1 serif italic">' + slide.titulo + '</h1>' +
@@ -210,9 +193,6 @@ document.addEventListener('DOMContentLoaded', function () {
         reveal();
     }
 
-    // --- UTILIDADES ---
-
-    // Cerrar Lightbox (JS Puro)
     const lightbox = document.getElementById('lightbox');
     if (lightbox) {
         lightbox.addEventListener('click', function (e) {
@@ -222,7 +202,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Cálculo de Edad (JS Puro)
     const birthInput = document.getElementById('birthDate');
     if (birthInput) {
         birthInput.addEventListener('change', function () {
@@ -235,7 +214,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Rango de Ingresos (JS Puro)
     const rangeInput = document.getElementById('incomeRange');
     if (rangeInput) {
         rangeInput.addEventListener('input', function () {
@@ -243,26 +221,21 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Formulario (JS Puro)
     const regForm = document.getElementById('regForm');
     if (regForm) {
         regForm.addEventListener('submit', function (e) {
-            e.preventDefault(); // Detenemos el envío para validar primero
+            e.preventDefault();
 
-            // 1. Capturamos los valores
             const nombre = document.getElementById('fullName').value.trim();
             const email = document.getElementById('regEmail').value.trim();
             const edad = document.getElementById('calculatedAge').value;
             const comentario = document.getElementById('message').value.trim();
             
-            // Patrón para validar que el correo sea real (usuario@dominio.com)
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-            // 2. Aplicamos las validaciones de JavaScript Puro
-            
             if (nombre.length < 5) {
                 alert("Error: El nombre debe tener al menos 5 caracteres.");
-                return; // Detiene el proceso
+                return;
             }
 
             if (!emailRegex.test(email)) {
@@ -280,17 +253,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // 3. Si pasó todas las validaciones
             alert("¡Registro exitoso!\nGracias por tu interés, " + nombre + ".");
-            this.reset(); // Limpiamos el formulario
+            this.reset();
             
-            // Opcional: Reiniciar el numerito del rango si lo tuvieras en esta página
             const rangeLabel = document.getElementById('rangeValue');
             if (rangeLabel) rangeLabel.textContent = "5500";
         });
     }
 
-    // Geolocalización (JS Puro)
     function configurarGeolocalizacion() {
         const btnRuta = document.getElementById('btn-ruta');
         if (btnRuta && navigator.geolocation) {
@@ -302,7 +272,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     configurarGeolocalizacion();
 
-    // Resaltar menú activo (JS Puro)
     const currentPath = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll('.nav-link').forEach(function (link) {
         if (link.getAttribute('href') === currentPath) {
