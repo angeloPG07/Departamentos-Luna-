@@ -29,7 +29,7 @@
 
     <main class="container py-5">
         <section class="max-width-700 mx-auto bg-apple-light p-5 rounded-5 border mb-5">
-            <h2 class="section-title text-center">Registro de Interés</h2>
+            <h2 class="section-title text-center">Correo de Interés</h2>
 
             <div data-fs-success class="alert alert-success mb-4 rounded-4">¡Gracias! Tu registro ha sido enviado con éxito.</div>
             <div data-fs-error class="alert alert-danger mb-4 rounded-4">Hubo un error al enviar el formulario. Por favor, intenta de nuevo.</div>
@@ -48,25 +48,48 @@
                     <input type="date" class="form-control rounded-pill" id="birthDate" name="birthDate" required data-fs-field>
                     <input type="hidden" id="calculatedAge" name="age">
                 </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Género</label>
+                    <select class="form-select rounded-pill" id="gender" name="gender" required data-fs-field>
+                        <option value="" disabled selected>Seleccione...</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-bold d-block">Grado Académico</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="academicGrade" value="Primaria" id="gradePri">
+                        <label class="form-check-label small" for="gradePri">Primaria</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="academicGrade" value="Secundaria" id="gradeSec">
+                        <label class="form-check-label small" for="gradeSec">Secundaria</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="academicGrade" value="Universitario" id="gradeUni">
+                        <label class="form-check-label small" for="gradeUni">Universitario</label>
+                    </div>
+                </div>
                 <div class="col-12">
                     <label class="form-label fw-bold">Mensaje</label>
                     <textarea class="form-control rounded-4" id="message" name="message" rows="4" placeholder="Escribe aquí tu consulta o mensaje adicional..." data-fs-field></textarea>
                 </div>
                 <div class="col-12 text-center mt-4">
-                    <button type="submit" class="btn btn-dark px-5 rounded-pill py-2" data-fs-submit-btn>Enviar Registro</button>
+                    <button type="submit" class="btn btn-dark px-5 rounded-pill py-2" data-fs-submit-btn>Enviar Correo</button>
                 </div>
             </form>
         </section>
 
-        <section class="py-5">
-            <h2 class="section-title text-center">Nuestra Ubicación</h2>
-            <div class="ratio ratio-21x9 rounded-5 overflow-hidden shadow mb-4">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31433.05607147716!2d-84.2285149!3d10.0162594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0f9947cf65555%3A0x6339091d37452d62!2sAlajuela%2C%20Costa%20Rica!5e0!3m2!1ses-419!2scr!4v1712913000000!5m2!1ses-419!2scr" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <div class="text-center">
-                <a id="btn-ruta" href="https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=Power%20House%20Gym%20San%20Isidro%2C%204R55%2B28M%2C%20Alajuela%20Province%2C%20Dulce%20Nombre" target="_blank" class="btn btn-primary rounded-pill px-5">
-                    <i class="bi bi-cursor-fill"></i> Trazar ruta hacia la sucursal
+        <section id="ubicacion" class="container my-5 pt-4 reveal text-center">
+            <h2 class="fw-bold text-info mb-3">Nuestra Ubicación</h2>
+            <div class="mb-4">
+                <a id="btn-ruta" href="https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=ASADA+Dulce+Nombre,+Dulce+Nombre+de+San+Isidro+150+metros+norte+del+templo+catolico+Alajuela+San+Iisdro,+20106" target="_blank" class="btn btn-info btn-sm rounded-pill px-4">
+                    Ver en Google Maps <i class="bi bi-box-arrow-up-right ms-1"></i>
                 </a>
+            </div>
+            <div class="shadow-sm rounded-4 overflow-hidden mx-auto" style="height: 400px; border: 2px solid #0dcaf0; max-width: 900px;">
+                <iframe src="https://www.google.com/maps?q=ASADA%20Dulce%20Nombre%2C%20Dulce%20Nombre%20de%20San%20Isidro%2C%20Alajuela%2C%20Costa%20Rica&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
     </main>

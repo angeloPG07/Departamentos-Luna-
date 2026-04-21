@@ -304,6 +304,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const nombre = document.getElementById('fullName').value.trim();
             const email = document.getElementById('regEmail').value.trim();
             const edad = document.getElementById('calculatedAge').value;
+            const genero = document.getElementById('gender').value;
+            const gradosAcademicos = document.querySelectorAll('input[name="academicGrade"]:checked');
             const comentario = document.getElementById('message').value.trim();
             
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -335,28 +337,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert("Lo sentimos, el registro solo es permitido para mayores de 18 años.");
                 return;
             }
+
+            if (!genero) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                alert("Error: Por favor, seleccione su género.");
+                return;
+            }
+
+            if (gradosAcademicos.length === 0) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                alert("Error: Por favor, seleccione al menos un grado académico.");
+                return;
+            }
         });
     }
-
-    function configurarGeolocalizacion() {
-        const btnRuta = document.getElementById('btn-ruta');
-        if (btnRuta && navigator.geolocation) {
-            // Solicitamos permiso y coordenadas al usuario
-            navigator.geolocation.getCurrentPosition(
-                function (pos) {
-                    const lat = pos.coords.latitude;
-                    const lng = pos.coords.longitude;
-                    const destino = encodeURIComponent("Power House Gym San Isidro, 4R55+28M, Alajuela Province, Dulce Nombre");
-                    const url = `https://www.google.com/maps/dir/${lat},${lng}/${destino}/`;
-                    btnRuta.setAttribute('href', url);
-                },
-                function (error) {
-                    console.warn("Permiso de ubicación denegado o error: ", error.message);
-                }
-            );
-        }
-    }
-    configurarGeolocalizacion();
 
     const currentPath = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll('.nav-link').forEach(function (link) {
