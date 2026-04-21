@@ -22,6 +22,9 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .max-width-700 {
@@ -275,7 +278,14 @@ body {
     background-color: #050505;
     border-top: 1px solid rgba(197, 160, 89, 0.2);
     color: #fff;
-    padding: 100px 0;
+    padding: 60px 0;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0;
+    }
 }
 
 .reveal {
