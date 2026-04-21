@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
         services.forEach(function (s) {
             const div = document.createElement('div');
             div.className = 'col-6 col-md-3 mb-4';
-            div.innerHTML = '<div class="p-4 bg-light rounded shadow-sm text-center reveal">' +
+            div.innerHTML = '<div class="p-4 bg-light rounded shadow-sm text-center reveal h-100">' +
                 '<i class="bi ' + s.icono + ' fs-2 text-primary d-block mb-2"></i>' +
                 '<h6 class="small fw-bold">' + s.nombre + '</h6></div>';
             servicesGrid.appendChild(div);
