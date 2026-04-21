@@ -63,6 +63,14 @@
       "icono": "bi-flower1"
     }
   ],
+  "miniGaleria": [
+    { "imagen": "images/cocina.jpg", "titulo": "Esencia Culinaria" },
+    { "imagen": "images/pasillo.jpg", "titulo": "Arquitectura Interior" },
+    { "imagen": "images/cuarto.jpg", "titulo": "Máximo Confort" },
+    { "imagen": "images/bath.jpg", "titulo": "Espacio funcional" },
+    { "imagen": "images/cama2.jpg", "titulo": "Espacios Privados" },
+    { "imagen": "images/ventana.jpg", "titulo": "Vistas Panorámicas" }
+  ],
   "galeria": [
     "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=400",
     "https://images.unsplash.com/photo-1499955085172-a104c9463ece?auto=format&fit=crop&q=80&w=400",
@@ -73,8 +81,52 @@
   ],
   "frases": [
     {
-      "q": "Tu nuevo hogar te está esperando.",
-      "a": "Agenda tu visita y descubre el espacio ideal para ti."
+      "q": "La elegancia no es darse a notar, sino ser recordado.",
+      "a": "Giorgio Armani"
+    },
+    {
+      "q": "El lujo está en cada detalle, la paz en cada rincón.",
+      "a": "Filosofía Luna"
+    },
+    {
+      "q": "La simplicidad es la sofisticación definitiva.",
+      "a": "Leonardo da Vinci"
+    },
+    {
+      "q": "Donde el diseño encuentra su propósito y la vida su equilibrio.",
+      "a": "Residencias de Autor"
+    }
+  ],
+  "valores": [
+    {
+      "nombre": "Comodidad",
+      "descripcion": "Ofrecemos espacios diseñados para el bienestar y la vida diaria.",
+      "icono": "bi-heart"
+    },
+    {
+      "nombre": "Calidad",
+      "descripcion": "Mantenemos nuestros apartamentos en buenas condiciones, cuidando cada detalle.",
+      "icono": "bi-gem"
+    },
+    {
+      "nombre": "Confianza",
+      "descripcion": "Fomentamos relaciones transparentes y responsables con nuestros inquilinos.",
+      "icono": "bi-shield-lock"
+    },
+    {
+      "nombre": "Tranquilidad",
+      "descripcion": "Promovemos un ambiente seguro y armonioso para una mejor convivencia.",
+      "icono": "bi-wind"
+    },
+    {
+      "nombre": "Funcionalidad",
+      "descripcion": "Disponemos de espacios prácticos que se adaptan a las necesidades reales.",
+      "icono": "bi-aspect-ratio"
+    },
+    {
+      "nombre": "Compromiso",
+      "descripcion": "Nos esforzamos por brindar una atención responsable y un servicio confiable.",
+      "icono": "bi-patch-check"
     }
   ]
 }

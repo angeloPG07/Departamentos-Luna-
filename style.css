@@ -111,7 +111,8 @@ body {
     }
 }
 
-.carousel-caption {
+/* Scoping the home caption to avoid affecting the mini-gallery */
+#home .carousel-caption {
     background: rgba(0,0,0,0.4);
     padding: 40px;
     border-left: 4px solid var(--accent-color);
@@ -303,4 +304,14 @@ body {
 
 .telegram-link:hover {
     color: #0088cc !important;
+}
+
+/* Asegurar que las flechas del carrusel siempre estén por encima de las imágenes */
+.carousel-control-prev, .carousel-control-next {
+    z-index: 10 !important;
+}
+
+/* Formspree status messages */
+[data-fs-success], [data-fs-error] {
+    display: none;
 }
