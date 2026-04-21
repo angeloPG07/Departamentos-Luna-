@@ -57,6 +57,10 @@
     {
       "nombre": "Áreas de recreación",
       "icono": "bi-tree"
+    },
+    {
+      "nombre": "Áreas verdes",
+      "icono": "bi-leaf"
     }
   ],
   "galeria": [
